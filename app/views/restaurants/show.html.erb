@@ -1,18 +1,30 @@
 <div class="container">
-  <h1><%= @restaurant.name %></h1>
-
 
   <div class="card">
 
     <div class="card-body">
-      <%= @restaurant.category %>
-      <%= @restaurant.address %>
-      <%= @restaurant.phone_number %>
+
+     <h1><%= @restaurant.name %></h1>
+      <small> <%= @restaurant.category %></small>
+      <p><%= @restaurant.address %></p>
+
+    <p>Phone number: <%= @restaurant.phone_number %>
 
     </div>
 
   </div>
 
 
-  <%= link_to "Back to list", restaurants_path %>
+
+
+  <div class="card-body reviews">
+    <h2>Reviews</h2>
+      <% @restaurant.reviews.each do |review| %>
+         <p><%= review.content %> <%= review.rating %></p>
+      <% end %>
+      <%= link_to "Back to list", restaurants_path %>
+      <%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %>
+
+  </div>
+
 </div>

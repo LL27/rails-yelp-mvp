@@ -1,4 +1,5 @@
 class Review < ApplicationRecord
+
   RATING = (0..5)
 
   validates :content, :rating, presence: true
