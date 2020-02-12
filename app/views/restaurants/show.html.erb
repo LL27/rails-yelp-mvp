@@ -1,0 +1,18 @@
+<div class="container">
+  <h1><%= @restaurant.name %></h1>
+
+
+  <div class="card">
+
+    <div class="card-body">
+      <%= @restaurant.category %>
+      <%= @restaurant.address %>
+      <%= @restaurant.phone_number %>
+
+    </div>
+
+  </div>
+
+
+  <%= link_to "Back to list", restaurants_path %>
+</div>
